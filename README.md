@@ -3,6 +3,7 @@
 This is the caffe implementation of our paper Unsupervised CNN for single view depth estimation: Geometry to the rescue published in ECCV 2016 with minor modifications. In this varient, we train the network end-to-end instead of coarse to fine-training with deeper networks and TVL1 loss for training. Both of which leads to substancial improvements in the results.
 
 If you use our model or the code for your research please cite:
+```
 @inproceedings{garg2016unsupervised,
   title={Unsupervised CNN for single view depth estimation: Geometry to the rescue},
   author={Garg, Ravi and Kumar, BG Vijay and Carneiro, Gustavo and Reid, Ian},
@@ -11,6 +12,7 @@ If you use our model or the code for your research please cite:
   year={2016},
   organization={Springer}
 }
+```
 
 # Performence on KITTI 
 We have resized the KITTI images to 160x608 for training - which changes the aspect ratio of the images. Thus for evaluation the KITTI images needs to be resized to this resolution and predicted disparities should be scaled by a factor of 608/width_of_input_image before computing.
@@ -35,7 +37,6 @@ accuracy THr 1.25 sq:   0.935108
 accuracy THr 1.25 cube:   0.974739
 
 ---------------------------------------------------------------------
-
 
 # Model Description
 We have trained a small variant of the residual network 50 by 2 from scratch on KITTI.
