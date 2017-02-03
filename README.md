@@ -62,7 +62,10 @@ We have introduced a scale layer with weight decay 0.01 before every 1x1 convolu
 
 The model as described above, was trained on 23200 raw stereo pairs of KITTI taken from city, residential and road sequences. Images from other sequences of KITTI were left untouched and were used only for testing following the standard protocol. 
 
-
 # License
 For academic usage, the code is released under the permissive BSD license. For any commercial purpose, please contact the authors.
+
+# Contact
+Please report any known issues on this thread of to ravi.garg@adelaide.edu.au
+
 
