@@ -1,0 +1,24 @@
+train_net: "train_resnet50by2_pool_tvl1.prototxt"
+test_interval: 40000000
+display: 20
+average_loss: 20
+lr_policy: "step"
+gamma: 0.1        # drop the learning rate by a factor of 10
+                  # (i.e., multiply it by a factor of gamma = 0.1)
+
+stepsize: 60000  # drop the learning rate every 100K iterations
+# lr for unnormalized softmax
+base_lr: 1e-3
+# high momentum
+momentum: 0.9
+momentum2:0.999
+delta:1e-8
+# no gradient accumulation
+iter_size: 1
+max_iter: 60000
+weight_decay: 0.0001
+snapshot: 1000
+snapshot_prefix: "snapshots/train"
+test_initialization: false
+type: "Adam"
+solver_mode: GPU
