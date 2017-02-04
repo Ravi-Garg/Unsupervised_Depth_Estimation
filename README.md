@@ -9,6 +9,10 @@ https://github.com/Ravi-Garg/Unsupervised_Depth_Estimation/blob/master/model/tra
 Shared model is a small variant of the 50 layer residual network from scratch on KITTI.
 Our model is **<25 MB** and predicts depths on 160x608 resolution images **at over 30Hz** on Nvidia Geforce GTX980 (50Hz on TITAN X). It can be used with caffe without any modification and we provide a simple matlab wrapper for testing.
 
+Click on the image to watch preview of the results on youtube:
+
+[![Screenshot](https://img.youtube.com/vi/Fut885qvBvQ/0.jpg)](https://www.youtube.com/watch?v=Fut885qvBvQ)
+
 If you use our model or the code for your research please cite:
 ```
 @inproceedings{garg2016unsupervised,
