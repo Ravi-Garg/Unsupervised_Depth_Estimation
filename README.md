@@ -11,7 +11,7 @@ Our model is **<25 MB** and predicts depths on 160x608 resolution images **at ov
 
 Click on the image to watch preview of the results on youtube:
 
-[![Screenshot](https://img.youtube.com/vi/Fut885qvBvQ/1.jpg)](https://www.youtube.com/watch?v=Fut885qvBvQ)
+[![Screenshot](https://img.youtube.com/vi/Fut885qvBvQ/0.jpg)](https://www.youtube.com/watch?v=Fut885qvBvQ)
 
 If you use our model or the code for your research please cite:
 ```
