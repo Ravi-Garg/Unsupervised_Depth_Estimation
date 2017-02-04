@@ -7,7 +7,7 @@ https://github.com/Ravi-Garg/Unsupervised_Depth_Estimation/blob/master/model/tra
 
 
 Shared model is a small variant of the 50 layer residual network from scratch on KITTI.
-Our model is <25 MB and predicts depths on 160x608 resolution images with 50Hz on nvidia TITAN X. This is 5x the frame rate of KITTI. It can be used with caffe without any modification and we provide a simple matlab wrapper for testing.
+Our model is **<25 MB** and predicts depths on 160x608 resolution images **at over 30Hz** on Nvidia Geforce GTX980 (50Hz on TITAN X). It can be used with caffe without any modification and we provide a simple matlab wrapper for testing.
 
 If you use our model or the code for your research please cite:
 ```
@@ -55,7 +55,8 @@ accuracy THr 1.25 cube:   0.974739
 Architecture of our networks closely follow standard Residual networks scheme. We have replaced resnet’s strided convolutions with 2x2 MAX pooling layers like VGG. The first 7x7 convolution with stride 2 is replaced with the 7x7 convolution with no stride and the max-pooled output at ½ resolution is passed through an extra 3x3 convolutional (128 features)->relu->2x2 pooling block. Rest of the network followes resnet50 with half the parameters every layer.
 
 For dense prediction we have followed the skip-connections as specified in FCN and our ECCV paper. 
-We have introduced a scale layer with weight decay 0.01 before every 1x1 convolution of FCN skip-connections which allows us to merge mid-level features more efficiently by
+We have introduced a learnable scale layer with weight decay 0.01 before every 1x1 convolution of FCN skip-connections which allows us to merge mid-level features more efficiently by:
+
 * Adaptively selecting the mid-level features which are more correlated to depth of the scene.
 * Making 1x1 convolutions for projections more stable for end to end training.
 
