@@ -1,6 +1,6 @@
 # Unsupervised Depth Estimation
 
-This is the caffe implementation of our paper "Unsupervised CNN for single view depth estimation: Geometry to the rescue" published in ECCV 2016 with minor modifications. In this varient, we train the network end-to-end instead of in coarse to fine manner with deeper network (Resnet 50) and TVL1 loss instead of HS loss. 
+This is the caffe implementation of our paper "Unsupervised CNN for single view depth estimation: Geometry to the rescue" published in ECCV 2016 with minor modifications. In this variant, we train the network end-to-end instead of in coarse to fine manner with deeper network (Resnet 50) and TVL1 loss instead of HS loss. 
 
 With the implementation we share the sample Resnet50by2 model trained on KITTI training set:
 https://github.com/Ravi-Garg/Unsupervised_Depth_Estimation/blob/master/model/train_iter_40000.caffemodel
@@ -56,7 +56,8 @@ accuracy THr 1.25 cube:   0.974739
 
 #Network Architecture
 
-Architecture of our networks closely follow standard Residual networks scheme. We have replaced resnet’s strided convolutions with 2x2 MAX pooling layers like VGG. The first 7x7 convolution with stride 2 is replaced with the 7x7 convolution with no stride and the max-pooled output at ½ resolution is passed through an extra 3x3 convolutional (128 features)->relu->2x2 pooling block. Rest of the network followes resnet50 with half the parameters every layer.
+Architecture of our networks closely follow Residual networks scheme. We start from [resnet 50 by 2](https://github.com/jay-mahadeokar/pynetbuilder/tree/master/models/imagenet)
+ architecture and have replaced strided convolutions with 2x2 MAX pooling layers like VGG. The first 7x7 convolution with stride 2 is replaced with the 7x7 convolution with no stride and the max-pooled output at ½ resolution is passed through an extra 3x3 convolutional (128 features)->relu->2x2 pooling block. Rest of the network followes resnet50 with half the parameters every layer.
 
 For dense prediction we have followed the skip-connections as specified in FCN and our ECCV paper. 
 We have introduced a learnable scale layer with weight decay 0.01 before every 1x1 convolution of FCN skip-connections which allows us to merge mid-level features more efficiently by:
