@@ -30,9 +30,13 @@ This model was trained on 23200 raw stereo pairs of KITTI taken from city, resid
 
 Our model is trained end-to-end from scratch with adam solver (momentum1 = 0.9 , momentom2 = 0.999, learning rate =10e-3 ) for 40,000 iterations on 4 gpus with batchsize 14 per GPU. This model is a pre-release and results with further tuning of hyperparameters should improve results. Only left-right flips as described in the paper were used to train the provided network. Other agumentations described in the paper and runtime shuffle were not used but should also improve performance.
 
+Here is the training loss recorded per 20 iterations: 
+
+<img src="https://github.com/Ravi-Garg/Unsupervised_Depth_Estimation/blob/master/model/train.png" alt="loss per 20 iterations " width="400">
+
 Note: We have resized the KITTI images to 160x608 for training - which changes the aspect ratio of the images. Thus for proper evaluation on KITTI the images needs to be resized to this resolution and predicted disparities should be scaled by a factor of 608/width_of_input_image before computing depth. For ease in citing the results for further publications, we share the performance measures.
 
-Our model gives following results on KITTI test-set used in our paper without any post processing: 
+Our model gives following results on KITTI test-set without any post processing: 
 ---------------------------------------------------------------------
 
 RMSE(linear):   4.400866
