@@ -29,6 +29,9 @@ If you use our model or the code for your research please cite:
 # Training Procedure
 This model was trained on 23200 raw stereo pairs of KITTI taken from city, residential and road sequences. Images from other sequences of KITTI were left untouched and were used only for testing following the standard protocol.
 
+To use the same training data as ou use the splits spacified in the file 'train_test_split.mat'
+
+
 Our model is trained end-to-end from scratch with adam solver (momentum1 = 0.9 , momentom2 = 0.999, learning rate =10e-3 ) for 40,000 iterations on 4 gpus with batchsize 14 per GPU. This model is a pre-release further tuning of hyperparameters should improve results. Only left-right flips as described in the paper were used to train the provided network. Other agumentations described in the paper and runtime shuffle were not used but should also lead to performance imrovement.
 
 Here is the training loss recorded per 20 iterations: 
@@ -58,6 +61,7 @@ accuracy THr 1.25 cube:   0.974739
 
 ---------------------------------------------------------------------
 
+The test set consist of 697 images which was used in  https://www.cs.nyu.edu/~deigen/depth/kitti_depth_predictions.mat
 
 #Network Architecture
 
